@@ -11,7 +11,6 @@ const deferredPrompt = ref(null)
 const showInstallButton = ref(true)
 
 async function installPWA() {
-  BeforeInstallPromptEvent.prompt()
   // 确保有可用的安装提示
   if (!deferredPrompt.value) return
 
@@ -41,6 +40,7 @@ onMounted(() => {
   window.addEventListener('beforeinstallprompt', (e) => {
     // 阻止默认行为
     e.preventDefault()
+    console.log('beforeinstallprompt', e)
 
     // 保存事件用于后续触发
     deferredPrompt.value = e
