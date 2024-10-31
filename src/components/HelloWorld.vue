@@ -19,7 +19,7 @@ const installPWA = () => {
   </div>
 
   <!--在网页模式时，显示安装pwa应用按钮-->
-  <button v-if="!navigator.standalone" @click="installPWA">安装PWA应用</button>
+  <button @click="installPWA">安装PWA应用</button>
 </template>
 
 <style scoped>
