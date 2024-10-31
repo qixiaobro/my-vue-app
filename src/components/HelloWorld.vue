@@ -8,9 +8,10 @@ defineProps({
 const count = ref(0)
 
 const deferredPrompt = ref(null)
-const showInstallButton = ref(false)
+const showInstallButton = ref(true)
 
 async function installPWA() {
+  BeforeInstallPromptEvent.prompt()
   // 确保有可用的安装提示
   if (!deferredPrompt.value) return
 
