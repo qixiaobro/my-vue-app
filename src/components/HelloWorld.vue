@@ -40,7 +40,7 @@ onMounted(() => {
   window.addEventListener('beforeinstallprompt', (e) => {
     // 阻止默认行为
     e.preventDefault()
-    alert('beforeinstallprompt')
+    console.log('beforeinstallprompt', e)
 
     // 保存事件用于后续触发
     deferredPrompt.value = e
